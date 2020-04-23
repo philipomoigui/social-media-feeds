@@ -9,7 +9,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-//  To export the social media feeds to XML
+//  To export the social media feeds to JSON
 func ExportJson(u week3.SocialMedia, filename string) error {
 	feed := make(map[int]string)
 	for index, val := range u.Feed() {
@@ -33,7 +33,7 @@ func ExportXml(u week3.SocialMedia, filename string) error {
 	return nil
 }
 
-// To export the social media feeds to XML
+// To export the social media feeds to YAML
 func ExportYaml(u week3.SocialMedia, filename string) error{
 	out, err := yaml.Marshal(u.Feed())
 	if err != nil {
